@@ -122,10 +122,10 @@ void StrList_print(const StrList* StrList) {
     if (StrList != NULL) {
         Node* current = StrList-> head;
         for (size_t i = 0; i < StrList->size-1; ++i) {
-            printf("%s\n", current -> data);
+            printf("%s ", current -> data);
             current = current-> next;
         }
-            printf("%s\n", current-> data);
+            printf("%s", current-> data);
     }
 }
 
@@ -268,12 +268,12 @@ void StrList_reverse(StrList* StrList) {
     Node* next = NULL;
 
     while (current != NULL) {
-        next = current->next;
-        current->next = prev;
-        prev = current;
-        current = next;
+        next = current->next;  
+        current->next = prev;  
+        prev = current;        
+        current = next;        
     }
-    StrList->head = prev;
+    StrList->head = prev; 
 }
 
 
