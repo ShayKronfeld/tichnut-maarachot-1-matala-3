@@ -53,7 +53,7 @@ StrList* list = StrList_alloc();
             reverseList(list);
         }
         else if(choice == 11) {
-            clearList(list);
+              clearList(list);
         }
         else if(choice == 12) {
             sortList(list);
@@ -63,7 +63,6 @@ StrList* list = StrList_alloc();
         }
     }
 
-    StrList_free(list);
     return 0;
 }
 
@@ -131,7 +130,6 @@ void reverseList(StrList* list) {
 void clearList(StrList* list) {
     StrList_free(list);
 }
-
 void sortList(StrList* list) {
     StrList_sort(list);
 }
