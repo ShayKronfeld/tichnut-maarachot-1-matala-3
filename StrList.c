@@ -48,6 +48,12 @@ void StrList_free(StrList* StrList){
         preset=next;
     }
     free(StrList);
+    StrList = NULL;
+    if (StrList != NULL) {
+        printf("list: %ld\n", StrList->size);
+    } else {
+        printf("StrList is NULL\n");
+    }
 }
 
 // Returns the number of elements in the StrList

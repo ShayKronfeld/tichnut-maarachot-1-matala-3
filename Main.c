@@ -13,7 +13,7 @@ void printStringOccurrences(StrList* list);
 void removeStringOccurrences(StrList* list);
 void removeStringAtIndex(StrList* list);
 void reverseList(StrList* list);
-void clearList(StrList* list);
+void clearList(StrList** list);
 void sortList(StrList* list);
 void checkSorted(StrList* list);
 
@@ -56,7 +56,7 @@ int main (){
                 reverseList(list);
                 break;
             case 11:
-                clearList(list);
+                clearList(&list);
                 break;
             case 12:
                 sortList(list);
@@ -111,11 +111,11 @@ void insertStringAtIndex(StrList* list) {
     char word[100];
     scanf("%d", &index);
     scanf("%s", word);
-    StrList_insertAt(`, word, index);
+    StrList_insertAt(list, word, index);
 }
 
 void printList(const StrList* list) {
-   printf("list: %ld\n", list->size);
+   printf("list: %p\n", list);
     if (list == NULL) {
         return;
     }
@@ -159,8 +159,10 @@ void reverseList(StrList* list) {
     StrList_reverse(list); 
 }
 
-void clearList(StrList* list) {
-    StrList_free(list);
+void clearList(StrList** list) {
+    StrList_free(*list);
+    *list = NULL;
+    printf("lililiil: %p\n", *list);
 }
 void sortList(StrList* list) {
     StrList_sort(list);
