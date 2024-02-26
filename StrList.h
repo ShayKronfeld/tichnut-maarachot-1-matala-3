@@ -110,3 +110,5 @@ void StrList_sort(StrList* StrList);
  * returns 1 for sorted,   0 otherwise
  */
 int StrList_isSorted(StrList* StrList);
+
+//void StrList_free_reverse(StrList* StrList);

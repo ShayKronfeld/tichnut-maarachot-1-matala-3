@@ -50,11 +50,6 @@ void StrList_free(StrList* StrList){
     free(StrList);
 }
 
-// void StrList_free2(StrList* StrList){
-//         StrList->head = NULL;
-//         StrList->size = 0;
-// }
-
 // Returns the number of elements in the StrList
 size_t StrList_size(const StrList* StrList) {
     return StrList->size;
@@ -66,8 +61,7 @@ void StrList_insertLast(StrList* list, const char* data) {
     if (newNode == NULL) {                                       //Memory allocation failed
         return;
     }
-
-    
+        
     newNode->data = strdup(data);                               // Allocate memory for the string data and copy it
     if (newNode->data == NULL) {                                //Memory allocation failed
         free(newNode);
